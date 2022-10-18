@@ -1,3 +1,6 @@
+# You can visit the deployed app using this link
+https://api-nasa-app.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
