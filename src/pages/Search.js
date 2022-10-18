@@ -2,7 +2,7 @@ import 'semantic-ui-css/semantic.min.css'
 
 import { Loading } from "../components"
 import { Select, Input } from 'semantic-ui-react';
-import { useState } from "react";
+import { useState   } from "react";
 
 import getNasaData from "../hooks/useFetch"
 
@@ -63,7 +63,7 @@ export default function Search() {
         <section className="px-32 py-32 bg-zinc-800	">
           <h1 className="heading text-center mb-10">Select Photos</h1>
 
-          <div className="form px-32 py-12 flex justify-around">
+          <div className="form grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto mt-10 lg:gap-20 px-5 mb-16">
                   <Select placeholder="Select Rover" 
                           onChange={(e, data) => handleChange(data)} 
                           options={nameOptions}
@@ -81,7 +81,10 @@ export default function Search() {
                           min="24"
                           max="1000"
                           className="w-72"/>
-                        <button className="w-56 bg-white	" onClick={() => fetchData(option)}>Start</button>
+              </div>
+              <div className="flex justify-center mb-16">
+              <button className="h-10 w-56 bg-white" 
+                      onClick={() => fetchData(option)}>Start</button>
               </div>
 
           {data.photos && (
