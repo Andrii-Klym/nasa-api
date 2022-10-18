@@ -14,7 +14,6 @@ export default async function getNasaData(marsName, sol, camera) {
     }
   });
   
-  console.log('hello');
 
   return res.data;
   } catch (e) {

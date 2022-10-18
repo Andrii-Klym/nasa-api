@@ -11,9 +11,7 @@ export default function Search() {
   const [option, setOption] = useState({});
 
   const handleChange = e => {
-    
     console.log(e);
-
     if(!e.target) {
       setOption(prevState => ({
         ...prevState,
@@ -25,8 +23,6 @@ export default function Search() {
         ...prevState,
         [name]: value
     }));
-
-    console.log(option);
 };
 
   const nameOptions = [
@@ -52,8 +48,6 @@ export default function Search() {
     const data = await getNasaData(roverName, solData, cameraName);
     setData(data);
   }
-
-  console.log(option);
 
   return (
     <>
@@ -83,7 +77,8 @@ export default function Search() {
                           className="w-72"/>
               </div>
               <div className="flex justify-center mb-16">
-              <button className="h-10 w-56 bg-white" 
+              <button className="h-10 w-56 bg-white"
+                      disabled={false}
                       onClick={() => fetchData(option)}>Start</button>
               </div>
 

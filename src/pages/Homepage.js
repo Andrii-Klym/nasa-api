@@ -1,25 +1,8 @@
-import { useState, useEffect } from "react"
-import Loading from "../components/LoadingState"
 import { Link } from "react-router-dom"
 
 export default function Homepage() {
-    const [company, setCompany] = useState(null)
-
-    useEffect(() => {
-        const fetchCompany = async () => {
-        const res = await fetch("https://api.spacexdata.com/v4/company")
-        const data = await res.json()
-        setCompany(data)
-        }
-
-        fetchCompany()
-    }, [])
-
     return (
         <>
-        {!company ? (
-            <Loading />
-        ) : (
             <section className="showcase">
             <div className="overlay">
                 <article className="text-white">
@@ -42,7 +25,6 @@ export default function Homepage() {
                         </li>
                     </ul>
                     </article>
-
                     <article>
                     <h2 className="font-bold border-b-2 border-white text-xl mb-3 pb-2 uppercase tracking-wider">
                         Headquarters
@@ -51,7 +33,6 @@ export default function Homepage() {
                         <li className="mb-1">Washington, D.C., United States</li>
                     </ul>
                     </article>
-
                     <article>
                     <h2 className="font-bold border-b-2 border-white text-xl mb-3 pb-2 uppercase tracking-wider">
                         Useful Links
@@ -66,14 +47,12 @@ export default function Homepage() {
                     </ul>
                     </article>
                 </div>
-
                 <p className="max-w-3xl mx-auto text-center mt-10">
                     The National Aeronautics and Space Administration is an independent agency of the US federal government responsible for the civil space program, aeronautics research, and space research.
                 </p>
                 </article>
             </div>
             </section>
-        )}
         </>
     )
 }
